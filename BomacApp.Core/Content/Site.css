@@ -1,0 +1,260 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.clearfix {
+    zoom: 1;
+}
+
+ .clearfix:after {
+        content: '.';
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+
+
+
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.form-control{background-color:#fff;border:1px solid #e4e7ea;border-radius:0;box-shadow:none;color:#565656;height:38px;max-width:100%;padding:7px 12px;transition:all 300ms linear 0s}.form-control:focus{box-shadow:none;border-color:#2b2b2b}.input-sm{height:30px;padding:5px 10px;font-size:12px;line-height:1.5}.input-lg{height:44px;padding:5px 10px;font-size:18px}.bootstrap-tagsinput{border:1px solid #e4e7ea;border-radius:0;box-shadow:none;display:block;padding:7px 12px}.bootstrap-touchspin .input-group-btn-vertical>.btn{padding:9px 10px}.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down,.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up{border-radius:0}.input-group-btn .btn{padding:8px 12px}
+
+
+.modal {
+    display: none; /*Hidden by default */ 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+
+
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    position: relative;
+    animation-duration: 0.5s;
+}
+
+
+
+
+
+/*Nav Band*/
+/*.navbar-inverse .navbar-brand {
+    color: #fff;
+}*/
+
+
+
+
+
+/*.navbar-inverse {
+   background-color: #aaa;
+    border-color: #54ff00;
+}*/
+
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+/* Modal Header */
+.modal-header {
+    border-bottom: 1px solid;
+    border-bottom-color: #e5e5e5;
+    color: #000;
+}
+
+/* Modal Body */
+.modal-body {
+    /*padding: 2px 16px;*/
+    display: block;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 20px 16px;
+    border-top: 1px solid;
+    border-top-color: #e5e5e5;
+    color: #000;
+}
+
+
+
+
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+/*------*/
+/*Form*/
+/*-----*/
+
+
+
+
+
+.form-group {
+    overflow: hidden;
+}
+
+.form-control,
+ .form-control.focus,
+.form-control:focus {
+    background-image: linear-gradient(red, red), linear-gradient(rgba(120, 130, 140, .13), rgba(120, 130, 140, .13));
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    float: none;
+}
+
+    .form-control.focus,
+    .form-control:focus {
+        background-size: 100% 2px, 100% 1px;
+        outline: 0;
+        transition-duration: .3s;
+    }
+
+.form-control {
+    background-color: rgba(0, 0, 0, 0);
+    background-position: center bottom, center calc(99%);
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 1px;
+    padding: 0;
+    transition: background 0s ease-out 0s;
+      border-bottom:1px solid #357ebd;
+}
+
+
+
+
+
+
+
+
+/*col-md*/
+
+.col-md-6{
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/*media query*/
+@media screen and (min-width: 768px) {
+    .cusrecordmodal .modal-dialog {
+        /*left: 20%;*/
+        width: auto;
+        
+    }
+}
+
+td {
+    text-align: center;
+}
+
+
+.person .col-md-12 {
+    margin: 5px auto;
+    font-size:larger;
+    font-weight:300;
+   
+}
+
+.person .col-md-12 input{
+   
+    font-size: large;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+       
+        width: 800px;
+        
+    }
+}

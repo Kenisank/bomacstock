@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "Statements";
+}
+
+<h2>Statements</h2>
+
+<div id="statementformhtml" name="statementformhtml">
+
+    <form id="statementform" name="statementform">
+
+        <div class="clearfix"></div>
+        <p>
+            <div class="col-md-12">
+
+
+                <div class="col-md-12 persondetail">
+                    <label class="col-sm-2">Customer/Dealer :-</label>
+
+                    <input type="text" class="form-control" required readonly name="statementperson" id="statementperson" />
+
+
+                </div>
+
+                <div class="col-md-12 persondetail">
+                    <label class="col-sm-2">Unique No. :-</label>
+                    <input type="text" class="form-control" required readonly name="statementuniqe" id="statementuniqe" />
+
+                </div>
+
+                <div class="col-md-12 persondetail">
+                    <label class="col-sm-2">Phone :-</label>
+
+                    <input class="form-control" style="text-align:center;" required disabled name="statementphone" id="statementphone" />
+
+                </div>
+
+                <div class="col-md-12 persondetail">
+                    <label class="col-sm-2">Address :-</label>
+
+                    <input class="form-control" style="text-align:center;" required disabled name="statementaddress" id="statementaddress" />
+
+                </div>
+
+
+                <div class="col-md-12 persondetail">
+                    <label class="col-sm-2">Balance :-</label>
+
+                    <input class="form-control" style="text-align:center;" required disabled name="statementbal" id="statementbal" />
+
+                </div>
+
+
+
+            </div>
+        </p>
+
+
+        <p>
+
+        </p>
+
+        <p>
+
+        </p>
+
+        <div class="col-md-12">
+
+
+            <table id="statementrecordtable" name="statementrecordtable" class="table table-bstatemented table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Date</th>
+                        @*<th>Record No.</th>*@
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Reference</th>
+                        <th>Debit (<i>NGN</i>) </th>
+                        <th>Credit (<i>NGN</i>) </th>
+                        <th>Balance</th>
+
+
+                    </tr>
+
+                </thead>
+
+                <tbody style="width: auto; margin: auto auto;" id="statementbody" name="statementbody"></tbody>
+
+
+
+            </table>
+
+            <div class="col-md-6" style="float:right;">
+
+                <span class="col-md-6">
+                    <label>Total Transaction Amount</label>
+                </span>
+
+
+                <span class="col-md-4" style="float:right;">
+
+
+
+                    <input type="number" class="form-control" readonly name="statementtotal" id="statementtotal" />
+
+
+                </span>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="clearfix"></div>
+
+        </div>
+
+
+
+    </form>
+
+
+
+
+
+
+    @section scripts{
+
+        <script src="~/Scripts/Sites/Site_Jquery.js"></script>
+
+    }
+
+
+</div>

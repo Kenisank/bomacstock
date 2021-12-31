@@ -1,0 +1,544 @@
+﻿
+
+@{
+    ViewBag.Title = "All Stock Records";
+}
+
+<h2>M.O Frank Printing Paper Co. VIRTUAL STOCK CARD</h2>
+
+@*<p>
+
+
+            <button id="addrecord" name="addrecord" class="btn btn-primary"> Add Sales Record</button>
+            <button id="addcusrecord" name="addcusrecord" class="btn btn-success"> Add Customer Record</button>
+        <button id="addpayment" name="addpayment" class="btn btn-info"> Add Payment</button>
+
+
+    </p>*@
+
+
+<table id="allrecords" name="allrecords" class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>S/N</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Quantity </th>
+            <th>Item </th>
+            <th>Damaged</th>
+            <th>Balance </th>
+            <th>Destination </th>
+            <th>Staff</th>
+
+        </tr>
+    </thead>
+
+    <tbody></tbody>
+
+</table>
+
+
+
+
+@*<div class="modal" id="recordmodal" role="dialog" aria-labelledby="recordmodalLabel" name="recordmodal">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel1">New Record</h4>
+                </div>
+                <div id="recordmodal" name="recordmodal" class="modal-body">
+                    <form id="recordform" name="recordform">
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group">
+
+                            <div class="col-md-6">
+                                <label>Stock Type</label>
+                                <select class="form-control" id="types" required name="types"></select>
+
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Stock Item</label>
+                                <select class="form-control" id="items" required name="items"></select>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="clearfix"></div>
+
+
+
+
+                        <div class="form-group">
+
+                            <div class="col-md-6">
+
+                                <label class="control-label">Balance Reams</label>
+                                <input type="number" class="form-control" readonly disabled style="display: inline-table; text-align:center; " required name="breamsi" id="breamsi" />
+
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="control-label">Balance Sheets</label>
+                                <input type="number" class="form-control" readonly disabled style="display: inline-table; text-align:center; " required name="bsheetsi" id="bsheetsi" />
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group">
+
+                            <div class="col-md-6">
+
+                                <label class="control-label">Reams</label>
+                                <input type="number" class="form-control" required name="reams" id="reams" />
+
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="control-label">Sheets</label>
+                                <input type="number" class="form-control" style="display: inline-table; " required name="sheets" id="sheets" />
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group col-md-12" style="display:inline-block">
+
+
+                            <input type="checkbox" class="checkbox" style="display:inline-block" value="true" id="isdamaged" name="isdamaged" />
+                            <label class="control-label">Damaged</label>
+
+
+
+
+
+
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
+                    <button type="submit" id="newrecord" name="newrecord" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>*@
+
+
+@*<div class="modal cusrecordmodal"  id="cusrecordmodal" role="dialog" aria-labelledby="cusrecordmodalLabel" name="cusrecordmodal">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="cusexampleModalLabel1">New Record</h4>
+            </div>
+            <div id="cusrecordmodal" name="cusrecordmodal" class="modal-body">*@
+@*<form id="cusrecordform" name="cusrecordform">
+
+    <div class="clearfix"></div>*@
+@*<p>
+        <div class="row col-md-12">
+
+
+            <div class="col-md-3">
+                <label>Customer/Dealer</label>
+                <select class="form-control" id="persons" required name="persons"></select>
+
+
+            </div>
+
+            <div class="col-md-2">
+                <label>Stock Type</label>
+                <select class="form-control" id="types1" required name="types1"></select>
+
+
+            </div>
+
+            <div class="col-md-4">
+
+                <label style="display:block; text-align:center;">Reciept Identification</label>
+
+                <span>
+                    <span class="col-md-6" style="display:inline-block; float:left">
+                        <select class="form-control" id="receipts" required name="receipts"></select>
+
+                    </span>
+
+                    <span class="col-md-6" style="display:inline-block; float:left">
+                        <input type="text" class="form-control" required name="receiptnum" id="receiptnum" />
+
+                    </span>
+                </span>
+
+
+
+            </div>
+
+            <div class="col-md-3">
+                <label>Balance</label>
+
+                <input type="number" class="form-control" style="text-align:center; " readonly required name="balance" id="balance" />
+
+            </div>
+
+
+
+        </div>
+    </p>*@
+
+
+@*<p>
+
+    </p>
+
+    <p>
+
+    </p>
+
+    <div class="col-md-12">
+
+
+        <table id="cusrecord" name="cusrecord" class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Item </th>
+                    <th>Quantity </th>
+                    <th>Damaged</th>
+                    <th>Balance </th>
+                    <th>Amount</th>
+                    <th></th>
+
+                </tr>
+
+                <tr role="row" id="cusrecform" name="cusrecform">
+                    <td>
+                        New
+                    </td>
+                    <td><select class="form-control" id="items1" required name="items1"></select></td>
+                    <td>
+                        <span style="display: inline-table;     width: 40%;"><input type="number" style="text-align:center;" class="form-control col-md-4" required name="reams1" id="reams1" /> <b> Reams </b></span>
+                        <span style="display: inline-table;  margin-left:5px;  width: 40%;"><input type="number" style="text-align:center;" class="form-control col-md-4" required name="sheets1" id="sheets1" /> <b> Sheets </b></span>
+
+
+                    </td>
+                    <td>
+
+                        <input type="checkbox" value="true" id="isdamaged1" name="isdamaged1" class="check-box" />
+                        <input name="isdamaged1" type="hidden" value="false">
+
+
+                    </td>
+                    <td>
+                        <span style="display: inline-table;     width: 40%;"><input type="number" readonly class="form-control col-md-4" style="text-align:center;" required name="breams" id="breams" /> <b> Reams </b></span>
+                        <span style="display: inline-table; margin-left:5px;   width: 40%;"><input type="number" style="text-align:center;" readonly class="form-control col-md-4" required name="bsheets" id="bsheets" /> <b> Sheets </b></span>
+
+                    </td>
+                    <td>
+                        <input type="number" class="form-control col-md-4" required name="amount" id="amount" />
+                    </td>
+
+                    <td>
+                        <input type="submit" id="cusaddrecord" name="cusaddrecord" class="btn btn-primary" value="+" />
+
+                    </td>
+
+                </tr>
+            </thead>
+
+            <tbody id="cusbody" name="cusbody"></tbody>
+
+
+
+        </table>
+
+        <div class="col-md-6" style="float:right;">
+
+            <span class="col-md-4">
+                <label>Total</label>
+            </span>
+
+
+            <span class="col-md-4" style="float:right;">
+
+
+
+                <input type="number" class="form-control" readonly name="total" id="total" />
+
+
+            </span>
+
+
+        </div>*@
+
+@*<div class="col-md-6" style="float:right;">
+
+        <span class="col-md-4">
+            <button type="submit" id="cusaddrecord" name="cusaddrecord" class="btn btn-primary">Add New Record</button>
+
+        </span>
+
+
+        <span class="col-md-4" style="float:right;">
+
+
+
+            <input type="number" class="form-control" readonly required name="reams" id="reams" />
+
+
+        </span>
+
+
+    </div>*@
+
+
+
+
+@*<div class="clearfix"></div>
+
+        </div>
+
+
+        <p>
+
+        </p>
+
+        <p>
+
+        </p>
+
+
+
+        <div class="clearfix"></div>
+        <p>
+            <div class="row col-md-12">
+
+
+                <div class="col-md-2">
+                    <label>Payment Type</label>
+                    <select class="form-control" id="types2" required name="types2"></select>
+
+
+                </div>
+
+
+
+                <div class="col-md-4">
+
+                    <label style="display:block; text-align:center;">Mode Of Payment</label>
+
+                    <span>
+                        <span class="col-md-6" style="display:inline-block; float:left">
+                            <select class="form-control" id="modes" required name="modes"></select>
+
+                        </span>
+
+                        <span class="col-md-6" style="display:inline-block; float:left">
+                            <input type="text" class="form-control" placeholder="Reference No." required name="payref" id="payref" />
+
+                        </span>
+                    </span>
+
+
+
+                </div>
+
+                <div class="col-md-3">
+                    <label>Amount Paid</label>
+
+                    <input type="number" class="form-control" style="text-align:center; " required name="payamount" id="payamount" />
+
+                </div>
+
+                <div class="col-md-3">
+                    <label>Company Account</label>
+                    <select class="form-control" id="accounts" required name="accounts"></select>
+
+
+                </div>
+
+            </div>
+        </p>
+
+
+    </form>*@
+@*</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
+                    <button type="submit" id="newcusrecord" name="newcusrecord" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>*@
+
+
+
+
+@*<div class="modal" id="recordmodal" role="dialog"  aria-labelledby="recordmodalLabel" name="recordmodal">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel1">New Payment</h4>
+                </div>
+                <div id="recordmodal" name="recordmodal" class="modal-body">
+                    <form id="recordform" name="recordform">
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group">
+
+
+
+                            <div class="col-md-6">
+                                <label>Customer/Dealer</label>
+                                <select class="form-control" id="items" required name="items"></select>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Balance</label>
+                                <input type="number" class="form-control" readonly disabled style="text-align:center;" required name="paybal1" id="paybal1" />
+
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="clearfix"></div>
+
+
+
+
+                        <div class="form-group">
+
+                            <div class="col-md-6">
+
+                                <label class="control-label">Mode</label>
+                                <select class="form-control" style="display: inline-table; text-align:center; " id="paymode1" required name="paymode1"></select>
+
+
+
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="control-label">Reference Number</label>
+                                <input type="number" class="form-control" style="display: inline-table; text-align:center; " required name="bsheetsi" id="bsheetsi" />
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix"></div>
+
+
+
+
+                        <div class="form-group col-md-12" style="display:inline-block">
+
+                            <label style="display:block; text-align:center;">Company Account</label>
+
+                            <span>
+                                <span class="col-md-6" style="display:inline-block; float:left">
+                                    <select class="form-control" id="banks" required name="banks"></select>
+
+                                </span>
+
+                                <span class="col-md-6" style="display:inline-block; float:left">
+                                    <select class="form-control" required name="accounts" id="accounts"> </select>
+
+                                </span>
+                            </span>
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group col-md-12" style="display:inline-block">
+
+
+                            <input type="checkbox" class="checkbox" style="display:inline-block" value="true" id="isdamaged" name="isdamaged" />
+                            <label class="control-label">Damaged</label>
+
+
+
+
+
+
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
+                    <button type="submit" id="newrecord" name="newrecord" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>*@
+
+
+
+
+
+
+
+@section scripts{
+    @*<script src="~/Scripts/Sites/Record_JavaScript.js"></script>
+        <script src="~/Scripts/Sites/Site_Jquery.js"></script>
+        <script src="~/Scripts/Sites/Record_Jquery.js"></script>*@
+
+
+    <script src="/Scripts/Site_JavaScript.js"></script>
+    <script src="/Scripts/Site_Jquery.js"></script>
+}
+
+
+
+
+
+

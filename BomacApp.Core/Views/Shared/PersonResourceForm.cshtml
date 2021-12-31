@@ -1,0 +1,204 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+    <link href="/Content/bootstrap.css" rel="stylesheet">
+    <link href="/Content/datatables/css/datatables.bootstrap.css" rel="stylesheet">
+    <link href="/Content/site.css" rel="stylesheet">
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+
+
+
+</head>
+<body>
+    <div>
+
+
+
+
+        <div class="modal" id="recordmodal" role="dialog" style="display:block;" aria-labelledby="recordmodalLabel" name="recordmodal">
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel1">New Stock Item</h4>
+                    </div>
+                    <div id="recordmodal" name="recordmodal" class="modal-body">
+                        <form id="recordform" name="recordform">
+
+                            <div class="clearfix"></div>
+
+
+
+
+
+                            <div class="form-group">
+
+                                @*<div class="col-md-2">
+
+                                        <label class="control-label">Name</label>
+
+                                    </div>*@
+
+                                <div class="col-md-12">
+
+
+                                    <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Name" required name="itemsheets" id="itemsheets" />
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="clearfix"></div>
+
+
+                            <div class="form-group">
+
+
+
+                                <div class="col-md-12">
+
+
+                                    <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Phone Number" required name="itemsheets" id="itemsheets" />
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="clearfix"></div>
+
+                            <div class="form-group">
+
+
+
+                                <div class="col-md-12">
+
+
+                                    <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Email" required name="itemsheets" id="itemsheets" />
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="clearfix"></div>
+
+                            <div class="form-group">
+
+
+
+                                <div class="col-md-12">
+
+
+                                    <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Web Site" required name="itemsheets" id="itemsheets" />
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="clearfix"></div>
+
+                            <div class="form-group">
+
+
+
+                                <div class="col-md-12">
+
+
+                                    <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Address" required name="itemsheets" id="itemsheets" />
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="clearfix"></div>
+
+
+                            <div class="form-group">
+
+                                <div class="col-md-6">
+                                    <label>State</label>
+                                    <select class="form-control" id="states" required name="categories"></select>
+
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label> </label>
+                                    <input type="number"  class="form-control" style="display: inline-table; text-align:center; " placeholder="Balance" required name="mybal" id="mybal" />
+                                    <span class="help-block"><small>Use <span style="color:red;">negative</span> if the customer is owing</small></span>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
+                        <button type="submit" id="newitem" name="newitem" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/respond.js"></script>
+    <script src="/Scripts/datatables/jquery.datatables.js"></script>
+    <script src="/Scripts/datatables/datatables.bootstrap.js"></script>
+
+
+    <script src="~/Scripts/Sites/Person_JavaScript.js"></script>
+
+    <script src="~/Scripts/Sites/Site_Jquery.js"></script>
+    <script src="~/Scripts/Sites/Record_Jquery.js"></script>
+
+
+</body>
+
+
+
+
+</html>

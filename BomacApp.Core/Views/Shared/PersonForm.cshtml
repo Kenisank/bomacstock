@@ -1,0 +1,657 @@
+﻿
+@{
+    ViewBag.Title = "Persons";
+}
+
+
+
+<div id="formhtml" name="formhtml">
+
+    <div id="personformhtml" name="personformhtml">
+
+        <p>
+            <button id="addperson" name="addperson" class="btn btn-primary"> Add New Dealer</button>
+            <button id="addpayment" name="addpayment" class="btn btn-info"> Add Payment</button>
+
+
+        </p>
+
+
+
+        <table id="personstable" name="personstable" class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Unique Number</th>
+                    <th>Contact No.</th>
+                    <th>State</th>
+                    <th>Balance</th>
+                    <th>Last Transcation</th>
+
+
+                </tr>
+            </thead>
+
+            <tbody style="width: auto; margin: auto auto;"></tbody>
+
+        </table>
+
+
+
+
+        <div class="modal cusrecordmodal" id="singlerecordmodal" role="dialog" aria-labelledby="singlerecordmodalLabel" name="singlerecordmodal">
+
+
+            @*//Single*@
+
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close js-close" data-dismiss="modal" id="singleclose1" name="singleclose1" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="singleexamplemodallabel1">new record</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="singleform" name="singleform">
+
+                            <div class="clearfix"></div>
+                            <p>
+                                <div class="row col-md-12">
+
+
+                                    <div class="col-md-3">
+                                        <label>Customer/Dealer</label>
+
+                                        <input type="text" class="form-control" required readonly name="singleperson" id="singleperson" />
+
+
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label>Stock Type</label>
+                                        <input type="text" class="form-control" required readonly name="singletype" id="singletype" />
+
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label>Reference</label>
+
+                                        <input class="form-control" style="text-align:center;" required disabled name="singleref" id="singleref" />
+
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label>Order No</label>
+
+                                        <input class="form-control" style="text-align:center;" required disabled name="singleord" id="singleord" />
+
+                                    </div>
+
+
+                                    <div class="col-md-3">
+                                        <label>Balance</label>
+
+                                        <input class="form-control" style="text-align:center;" required disabled name="singlebal" id="singlebal" />
+
+                                    </div>
+
+
+
+                                </div>
+                            </p>
+
+
+                            <p>
+
+                            </p>
+
+                            <p>
+
+                            </p>
+
+                            <div class="row col-md-12">
+
+
+                                <table id="singlerecordtable" name="singlerecordtable" class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Item </th>
+                                            <th>Quantity </th>
+                                            <th>Damaged</th>
+                                            <th>Amount</th>
+
+
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody style="width: auto; margin: auto auto;" id="singlebody" name="singlebody"></tbody>
+
+
+
+                                </table>
+
+                                <div class="col-md-6" style="float:right;">
+
+                                    <span class="col-md-4">
+                                        <label>Total</label>
+                                    </span>
+
+
+                                    <span class="col-md-4" style="float:right;">
+
+
+
+                                        <input type="number" class="form-control" readonly name="singletotal" id="singletotal" />
+
+
+                                    </span>
+
+
+                                </div>
+
+
+
+
+
+
+                                <div class="clearfix"></div>
+
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default closemodal js-close" id="singleclose2" name="singleclose2" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="modal person" id="personmodal" role="dialog" style="display:none;" aria-labelledby="personmodalLabel" name="personmodal">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel1">New Customer/Dealer</h4>
+                </div>
+                <div id="personmodal" name="personmodal" class="modal-body">
+                    <form id="personform" name="personform">
+
+                        <div class="clearfix"></div>
+
+
+
+
+
+                        <div class="form-group">
+
+
+                            <div class="col-md-12">
+                                <label>Customer or Dealer</label>
+                                <select class="form-control" id="persontypes" required name="persontypes"></select>
+
+
+                            </div>
+
+
+                            <div class="clearfix"></div>
+
+
+                            <div class="col-md-12">
+
+
+                                <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Name" required name="personname" id="personname" />
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix"></div>
+
+
+                        <div class="form-group">
+
+
+
+                            <div class="col-md-12">
+
+
+                                <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Phone Number" required name="personphone" id="personphone" />
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group">
+
+
+
+                            <div class="col-md-12">
+
+
+                                <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Email" required name="personemail" id="personemail" />
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group">
+
+
+
+                            <div class="col-md-12">
+
+
+                                <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Web Site" required name="personweb" id="personweb" />
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group">
+
+
+
+                            <div class="col-md-12">
+
+
+                                <input type="text" class="form-control" style="display: inline-table; text-align:center; " placeholder="Address" required name="personaddress" id="personaddress" />
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="clearfix"></div>
+
+
+                        <div class="form-group">
+
+                            <div class="col-md-6">
+                                <label>State</label>
+                                <select class="form-control" id="states" required name="states"></select>
+
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <label> </label>
+                                <input type="number" class="form-control" style="display: inline-table; text-align:center; " placeholder="Balance" required name="personbal" id="personbal" />
+                                <span class="help-block"><small>Use <span style="color:red;">negative</span> if the customer is owing</small></span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
+                    <button type="submit" id="newperson" name="newperson" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="modal" id="paymodal" role="dialog"  aria-labelledby="paymodalLabel" name="paymodal">
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel1">New Payment</h4>
+                </div>
+                <div id="recordmodal" name="recordmodal" class="modal-body">
+                    <form id="recordform" name="recordform">
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group">
+
+
+
+                            <div class="col-md-6">
+                                <label>Customer/Dealer</label>
+                                <select class="form-control" id="persons2" required name="persons2"></select>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Balance</label>
+                                <input type="number" class="form-control" readonly disabled style=" text-align:center; " required name="bal2" id="bal2" />
+
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="clearfix"></div>
+
+
+
+
+                        <div class="form-group">
+
+                            <div class="col-md-6">
+
+                                <label class="control-label">Mode</label>
+                                <select class="form-control" style="display: inline-table; text-align:center; " id="modes2" required name="modes2"></select>
+
+
+
+
+
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="control-label">Reference Number</label>
+                                <input type="text" class="form-control" style="display: inline-table; text-align:center; " required name="payref2" id="payref2" />
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix"></div>
+
+
+
+
+                        <div class="form-group col-md-12" style="display:inline-block">
+
+                            <label style="display:block; text-align:center;">Company Account</label>
+
+                            <span>
+                                <span class="col-md-6" style="display:inline-block; float:left">
+                                    <select class="form-control" id="banks" required name="banks"></select>
+
+                                </span>
+
+                                <span class="col-md-6" style="display:inline-block; float:left">
+                                    <select class="form-control" required name="accounts" id="accounts"> </select>
+
+                                </span>
+                            </span>
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-6">
+
+                            <label class="control-label">Type</label>
+                            <select class="form-control" style="display: inline-table; text-align:center; " id="types2" required name="types2"></select>
+
+
+
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="control-label">Amount Paid</label>
+                            <input type="text" class="form-control" style="display: inline-table; text-align:center; " required name="amtpaid" id="amtpaid" />
+
+
+                        </div>
+
+
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
+                    <button type="submit" id="newpay" name="newpay" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div id="orderformhtml" name="orderformhtml" style="display:none;">
+
+        <form id="orderform" name="orderform">
+
+            <div class="clearfix"></div>
+            <p>
+                <div class="col-md-12">
+
+
+                    <div class="col-md-12 persondetail">
+                        <label class="col-sm-2">Customer/Dealer :-</label>
+
+                        <input type="text" class="form-control" required readonly name="orderperson" id="orderperson" />
+
+
+                    </div>
+
+                    <div class="col-md-12 persondetail">
+                        <label class="col-sm-2">Unique No. :-</label>
+                        <input type="text" class="form-control" required readonly name="orderuniqe" id="orderuniqe" />
+
+                    </div>
+
+                    <div class="col-md-12 persondetail">
+                        <label class="col-sm-2">Phone :-</label>
+
+                        <input class="form-control" style="text-align:center;" required disabled name="orderphone" id="orderphone" />
+
+                    </div>
+
+                    <div class="col-md-12 persondetail">
+                        <label class="col-sm-2">Address :-</label>
+
+                        <input class="form-control" style="text-align:center;" required disabled name="orderaddress" id="orderaddress" />
+
+                    </div>
+
+
+                    <div class="col-md-12 persondetail">
+                        <label class="col-sm-2">Balance :-</label>
+
+                        <input class="form-control" style="text-align:center;" required disabled name="orderbal" id="orderbal" />
+
+                    </div>
+
+
+
+                </div>
+            </p>
+
+
+            <p>
+
+            </p>
+
+            <p>
+
+            </p>
+
+            <div class="col-md-12">
+
+
+                <table id="orderrecordtable" name="orderrecordtable" class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Date</th>
+                            <th>Order No. </th>
+                            <th>Type</th>
+                            <th>Reference</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                            <th>Balance</th>
+
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody style="width: auto; margin: auto auto;" id="orderbody" name="orderbody"></tbody>
+
+
+
+                </table>
+
+                <div class="col-md-6" style="float:right;">
+
+                    <span class="col-md-6">
+                        <label>Total Transaction Amount</label>
+                    </span>
+
+
+                    <span class="col-md-4" style="float:right;">
+
+
+
+                        <input type="number" class="form-control" readonly name="ordertotal" id="ordertotal" />
+
+
+                    </span>
+
+
+                </div>
+
+
+
+
+
+
+                <div class="clearfix"></div>
+
+            </div>
+
+
+
+        </form>
+
+
+    </div>*@
+
+
+@section scripts{
+
+    <script src="/Scripts/Site_Jquery.js"></script>
+
+
+    <script src="/Scripts/Sites/Person_Jquery.js"></script>
+    <script src="/Scripts/Sites/Person_JavaScript.js"></script>
+
+
+    <script src="~/Scripts/Sites/Pay_Jquery.js"></script>
+    <script src="~/Scripts/Sites/Pay_JavaScript.js"></script>
+
+
+}
+
+
+
+

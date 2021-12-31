@@ -1,0 +1,233 @@
+﻿
+@{
+    ViewBag.Title = "ItemForm";
+}
+
+<h2>BOMAC PAPER HOUSE Co. VIRTUAL STOCK CATEGORY/ITEM</h2>
+
+
+
+
+<div>
+    <div class="col-md-4" style="overflow:hidden;">
+        <p>
+            <button id="addcategory" name="addcategory" class="btn btn-primary"> Add Stock Category</button>
+
+        </p>
+
+        <table id="stockcategories" style="overflow:hidden;" name="stockcategories" class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+
+                    <th>Name</th>
+                    <th>No. Of Items</th>
+
+
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="col-md-8" style="overflow:hidden;">
+
+        <p>
+            <button id="additem" name="additem" class="btn btn-success"> Add Stock Item</button>
+
+        </p>
+
+        <table id="stockitems" style="overflow:hidden;" name="stockitems" class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+
+                    <th>Name</th>
+                    <th>Quantity</th>
+ 
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="categorymodal" role="dialog" style="display:none;" aria-labelledby="categorymodalLabel" name="categorymodal">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel1">New Category</h4>
+            </div>
+            <div id="categorymodal" name="categorymodal" class="modal-body">
+                <form id="categoryform" name="categoryform">
+
+                    <div class="clearfix"></div>
+
+                    <div class="form-group col-md-12" style="display:inline-block">
+
+                        <label style="display:block; text-align:center;">Category Name</label>
+
+                        <div class="col-md-12">
+
+
+                            <input type="text" class="form-control" style="display: inline-table; text-align:center; " required name="catname" id="catname" />
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
+                <button type="submit" id="newcategory" name="newcategory" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<div class="modal" id="itemmodal" role="dialog" style="display:none;" aria-labelledby="itemmodalLabel" name="itemmodal">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel1">New Stock Item</h4>
+            </div>
+            <div id="itemmodal" name="itemmodal" class="modal-body">
+                <form id="itemform" name="itemform">
+
+                    <div class="clearfix"></div>
+
+
+
+
+
+                    <div class="form-group">
+
+                        <div class="col-md-6">
+
+                            <label class="control-label">Name</label>
+                            <input type="text" class="form-control" style="display: inline-table; text-align:center; " required name="itemname" id="itemname" />
+
+
+
+
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="control-label">Number Of Sheets</label>
+                            <input type="text" class="form-control" style="display: inline-table; text-align:center; " required name="itemsheets" id="itemsheets" />
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="clearfix"></div>
+
+
+
+
+                    <div class="form-group col-md-12" style="display:inline-block">
+
+                        <label style="display:block; text-align:center;">Initial Amount</label>
+
+                        <span>
+                            <span class="col-md-6" style="display:inline-block; float:left">
+                                <input type="number" min=0 oninput="validity.valid||(value='');" class="form-control" style="display: inline-table;  text-align:center; " placeholder="Reams" required name="itemamtreams" id="itemamtreams" />
+
+
+                            </span>
+
+                            <span class="col-md-6" style="display:inline-block; float:left">
+                                <input type="number" min=0 oninput="validity.valid||(value='');" class="form-control" style="display: inline-table; text-align:center; " placeholder="Sheets" required name="itemamtshets" id="itemamtsheets" />
+
+
+                            </span>
+                        </span>
+
+
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+
+
+                    <div class="form-group">
+
+                        <div class="col-md-6">
+                            <label>Category</label>
+                            <select class="form-control" id="categories" required name="categories"></select>
+
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="control-label">Manufactuturer</label>
+                            <input type="text" class="form-control" style="display: inline-table; text-align:center; " required name="mani" id="mani" />
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
+                <button type="submit" id="newitem" name="newitem" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="/Scripts/jquery-1.10.2.js"></script>
+<script src="/Scripts/bootstrap.js"></script>
+<script src="/Scripts/respond.js"></script>
+<script src="/Scripts/datatables/jquery.datatables.js"></script>
+<script src="/Scripts/datatables/datatables.bootstrap.js"></script>
+
+
+
+<script src="/Scripts/Sites/Site_Jquery.js"></script>
+<script src="/Scripts/Site_Jquery.js"></script>
+<script src="~/Scripts/Sites/Record_Jquery.js"></script>
+
+<script src="/Scripts/Sites/Item_JavaScript.js"></script>
+
+
